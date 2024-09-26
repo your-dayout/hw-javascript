@@ -5,13 +5,13 @@ function CheckPasswordStrength(password) {
     if (!/\d/.test(password)) {
             return "Weak"; 
     }
-    if (!/[a-z]/.test(password)) {
+    if (!/[a-zA-Z]/.test(password)) {
                 return "Weak";
-    }
-                if (!/[A-Z]/.test(password)) {
-                    return "Weak";
     }
     return "Strong";
 }
-console.log(CheckPasswordStrength(password: hdjdiwej));
+console.log(CheckPasswordStrength("password"));
+console.log(CheckPasswordStrength("Password"));
+console.log(CheckPasswordStrength("Password123"));
+console.log(CheckPasswordStrength("Password123!"));
 
