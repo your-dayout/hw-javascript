@@ -9,8 +9,10 @@ function CartTotal (cart) {
     let CartTotal=0;
     for (let i=0; i<cart.length; i++){
         const item = cart[i];
-    total = CartTotal +(item.price*item.quantity);
+    CartTotal = CartTotal +(item.price*item.quantity);
 
     return CartTotal;
 
 }
+
+console.log(CartTotal(cart));
