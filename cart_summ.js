@@ -6,12 +6,13 @@ const cart = [
     {name: "Eggs", price: 8, quantity:2}
 ];
 function CartTotal (cart) {
-    let CartTotal=0;
+    let total=0;
     for (let i=0; i<cart.length; i++){
         const item = cart[i];
-    CartTotal = CartTotal +(item.price*item.quantity);
+    total += (item.price*item.quantity);
+    }
 
-    return CartTotal;
+    return total;
 
 }
 
