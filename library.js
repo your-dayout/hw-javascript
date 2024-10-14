@@ -8,20 +8,21 @@ constructor(title, author) {
     this.#author=author;
     this.#availability=true;
 }
-    getTitle() {
-        return this.#title;
-    }
-    getAuthor() {
-        return this.#author;
-    }
-    getAvailability() {
-        return this.#availability;
-    }
+getTitle() {
+    return this.#title;
+}
+getAuthor() {
+    return this.#author;
+}
+getAvailability() {
+    return this.#availability;
+}
 
-    checkoutBook() {
-        if (this.#availability) {
-            this.#availability = false;
-        } else {
+checkoutBook() {
+    if (this.#availability) {
+        this.#availability = false;
+        console.log(`You have checked out "${this.#title}".`);
+    } else {
             console.log (`Sorry "${this.#title}" is not available.`);
         }
     }
@@ -30,11 +31,12 @@ class Library {
     constructor() {
         this.books = [];
         } 
-    addBook(book){
+    addBook(book) {
         this.books.push(book);
     }
     checkoutBook(title) {
         const book = this.books.find(book => book.getTitle() === title);
+        
         if (book) {
         if (book.getAvailability()) {
             book.checkoutBook();
@@ -42,21 +44,24 @@ class Library {
     } else {
         console.log(`Sorry, ${title} is currently not available.`);
     }
-    } else {
+} else {
     console.log(`Book titled ${title} not found in the library.`);
     }
 }
+
 viewAvailableBooks() {
-    const availableBooks = this.books.filter(book => book.getAvailability());
-    if (availableBooks.length > 0) {
+    const AvailableBooks = this.books.filter(book => book.getAvailability());
+    if (AvailableBooks.length > 0) {
         console.log(`Available books:`);
-        availableBooks.forEach(book => {
+        AvailableBooks.forEach(book => {
             console.log(`${book.getTitle()} by ${book.getAuthor()}`);
         });
         } else {
          console.log("No books are currently available.");
     }
 }
+}
+
 const myLibrary = new Library();
 const book1 = new Book("Контопська Відьма", "Григорій Квітка-Основ'яненко");
 const book2 = new Book("1984", "Джордж Орвелл");
