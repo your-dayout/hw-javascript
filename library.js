@@ -1,8 +1,8 @@
-class book {
+class Book {
     #title;
     #author;
     #availability;
-}
+
 constructor(title, author) {
     this.#title=title;
     this.#author=author;
@@ -18,11 +18,11 @@ constructor(title, author) {
         return this.#availability;
     }
 
-    CheckoutBook() {
+    checkoutBook() {
         if (this.#availability) {
             this.#availability = false;
         } else {
-            console.log (`Sorry "${this.#title" is not available.`});
+            console.log (`Sorry "${this.#title}" is not available.`);
         }
     }
 }
@@ -33,12 +33,12 @@ class Library {
     addBook(book){
         this.books.push(book);
     }
-    CheckoutBook(title) {
+    checkoutBook(title) {
         const book = this.books.find(book => book.getTitle() === title);
         if (book) {
         if (book.getAvailability()) {
             book.CheckoutBook();
-            console.log(`You have checked out "${book.getTitle()}` by ${book.getAuthor()}.");
+            console.log(`You have checked out "${book.getTitle()}` by ${book.getAuthor()}.`);
     } else {
         console.log(`Sorry, `${title}" is currently not available.`);
     } else {
@@ -50,7 +50,7 @@ viewAvailableBooks() {
     if (availableBooks.length > 0) {
         console.log("Available books:");
         availableBooks.forEach(book => {
-            console.log(`${book.getTitle()}" by ${book.getAuthor()}`);
+            console.log(`"${book.getTitle()}" by ${book.getAuthor()}`);
         });
         } else {
          console.log("No books are currently available.");
