@@ -56,3 +56,16 @@ viewAvailableBooks() {
          console.log("No books are currently available.");
     }
 }
+const myLibrary = new Library();
+const book1 = new Book("Контопська Відьма", "Григорій Квітка-Основ'яненко");
+const book2 = new Book("1984", "Джордж Орвелл");
+const book3 = new Book("Великий Гетсбі", "Ф. Скотт Фіцджеральд");
+
+myLibrary.addBook(book1);
+myLibrary.addBook(book2);
+myLibrary.addBook(book3);
+
+myLibrary.viewAvailableBooks();
+myLibrary.checkoutBook("1984");
+myLibrary.viewAvailableBooks();
+myLibrary.checkoutBook("1984");
