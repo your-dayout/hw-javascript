@@ -37,20 +37,21 @@ class Library {
         const book = this.books.find(book => book.getTitle() === title);
         if (book) {
         if (book.getAvailability()) {
-            book.CheckoutBook();
-            console.log(`You have checked out "${book.getTitle()}` by ${book.getAuthor()}.`);
+            book.checkoutBook();
+            console.log(`You have checked out "${book.getTitle()}" by ${book.getAuthor()}.`);
     } else {
-        console.log(`Sorry, `${title}" is currently not available.`);
+        console.log(`Sorry, ${title} is currently not available.`);
+    }
     } else {
-    console.log(`Book titled "${title}" not found in the library.`);
+    console.log(`Book titled ${title} not found in the library.`);
     }
 }
 viewAvailableBooks() {
     const availableBooks = this.books.filter(book => book.getAvailability());
     if (availableBooks.length > 0) {
-        console.log("Available books:");
+        console.log(`Available books:`);
         availableBooks.forEach(book => {
-            console.log(`"${book.getTitle()}" by ${book.getAuthor()}`);
+            console.log(`${book.getTitle()} by ${book.getAuthor()}`);
         });
         } else {
          console.log("No books are currently available.");
